@@ -1,0 +1,6 @@
+2024-05-31 18:20:22: Pulse Alarm Snoozed for 5 minutes
+2024-05-31 18:20:23: Pulse Alarm Deactivated
+2024-05-31 18:20:23: Pulse Alarm Activated
+2024-05-31 18:20:24: SpO2 Alarm Snoozed for 5 minutes
+2024-05-31 18:20:25: SpO2 Alarm Deactivated
+2024-05-31 18:20:25: SpO2 Alarm Activated

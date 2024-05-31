@@ -1,0 +1,22 @@
+    Download JavaFX SDK:
+    Ensure that you have downloaded the correct version of the JavaFX SDK that matches your JDK version.
+        Go to Gluon and download the appropriate SDK.
+
+    Project Structure Configuration:
+        Go to File > Project Structure.
+        In Project settings, ensure the Project SDK is set to your JDK (make sure it’s compatible with JavaFX).
+        In Modules settings, select your module, then go to the Dependencies tab, and add the JavaFX libraries:
+            Click on + > JARs or directories.
+            Navigate to the lib folder inside your downloaded JavaFX SDK and add all JAR files.
+
+    VM Options Configuration:
+
+    To run a JavaFX application, you need to add VM options to specify the JavaFX modules to be included. Follow these steps:
+        Go to Run > Edit Configurations.
+        Select your application's run configuration in the application add through modify options "Add VM options".
+        In the VM options field, add the following:
+
+        --module-path "D:\IntelliJ IDEA 2023.3.6\ProjectLibary\javafx-sdk-22.0.1\lib"
+        --add-modules javafx.controls,javafx.fxml
+
+Make sure the path matches the location where you have the JavaFX SDK installed.

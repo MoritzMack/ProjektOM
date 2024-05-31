@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PulseOxyController">
+    <children>
+        <HBox layoutX="120.0" layoutY="15.0" spacing="10.0" AnchorPane.bottomAnchor="545.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="15.0">
+            <children>
+                <TextField fx:id="tPatientID" prefHeight="26.0" prefWidth="189.0" promptText="Patient-ID" text="Patient-ID" />
+                <Button fx:id="bPatientID" mnemonicParsing="false" text="Add ID" />
+            </children>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </HBox>
+        <HBox layoutX="46.0" layoutY="121.0" prefHeight="202.0" prefWidth="664.0" spacing="10.0" AnchorPane.bottomAnchor="219.0" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="121.0">
+            <children>
+                <LineChart fx:id="cPulse">
+                    <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT" />
+                    </yAxis>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </LineChart>
+                <LineChart fx:id="cSpO2">
+                    <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT" />
+                    </yAxis>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </LineChart>
+            </children>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </HBox>
+        <HBox layoutX="53.0" layoutY="395.0" prefHeight="120.0" prefWidth="320.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="470.0">
+            <children>
+                <VBox prefHeight="120.0" prefWidth="166.0" spacing="10.0">
+                    <children>
+                        <Button fx:id="bPulseAlarm" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="Alarm">
+                            <graphic>
+                                <AmbientLight color="CHARTREUSE" lightOn="true" />
+                            </graphic>
+                        </Button>
+                        <Button fx:id="bPulse5minSnooze" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="5 min Snooze">
+                            <graphic>
+                                <AmbientLight color="CHARTREUSE" lightOn="true" />
+                            </graphic>
+                        </Button>
+                        <Button fx:id="bPulseDeactivateAlarm" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="Deactivate Alarm">
+                            <graphic>
+                                <AmbientLight>
+                                    <color>
+                                        <Color red="1.0" />
+                                    </color></AmbientLight>
+                            </graphic>
+                        </Button>
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="150.0" spacing="10.0">
+                    <children>
+                        <Label fx:id="lPulseAlarm" prefHeight="30.0" prefWidth="150.0" text="Terminate Alarm" />
+                        <Label fx:id="lPulse5minSnooze" prefHeight="30.0" prefWidth="150.0" text="Snooze Disabled" />
+                        <Label fx:id="lPulseDeactivateAlarm" prefHeight="30.0" prefWidth="150.0" text="Alarm Active" />
+                    </children>
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+            </children>
+        </HBox>
+        <HBox layoutX="430.0" layoutY="380.0" prefHeight="120.0" prefWidth="320.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="470.0">
+            <children>
+                <VBox prefHeight="120.0" prefWidth="166.0" spacing="10.0">
+                    <children>
+                        <Button fx:id="bSpO2Alarm" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="Alarm">
+                            <graphic>
+                                <AmbientLight color="CHARTREUSE" lightOn="true" />
+                            </graphic>
+                        </Button>
+                        <Button fx:id="bSpO25minSnooze" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="5 min Snooze">
+                            <graphic>
+                                <AmbientLight color="CHARTREUSE" lightOn="true" />
+                            </graphic>
+                        </Button>
+                        <Button fx:id="bSpO2DeactivateAlarm" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="Deactivate Alarm">
+                            <graphic>
+                                <AmbientLight color="CHARTREUSE" lightOn="true" />
+                            </graphic>
+                        </Button>
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="150.0" spacing="10.0">
+                    <children>
+                        <Label fx:id="lSpO2Alarm" prefHeight="30.0" prefWidth="150.0" text="Terminate Alarm" />
+                        <Label fx:id="lSpO25minSnooze" prefHeight="30.0" prefWidth="150.0" text="Snooze Disabled" />
+                        <Label fx:id="lSpO2DeactivateAlarm" prefHeight="30.0" prefWidth="150.0" text="Alarm Active" />
+                    </children>
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+            </children>
+        </HBox>
+        <Label fx:id="tTime" alignment="CENTER" layoutX="646.0" layoutY="20.0" prefHeight="30.0" prefWidth="140.0" text="Time" AnchorPane.bottomAnchor="550.0" AnchorPane.leftAnchor="646.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="20.0" />
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="166.0" layoutY="122.0" prefHeight="18.0" prefWidth="108.0" text="SpO2" textAlignment="CENTER" underline="true" AnchorPane.bottomAnchor="480.0" AnchorPane.leftAnchor="450.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="80.0">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="126.0" layoutY="122.0" prefHeight="18.0" prefWidth="189.0" text="Pulse" textAlignment="CENTER" underline="true" AnchorPane.bottomAnchor="480.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="80.0">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <HBox layoutX="86.0" layoutY="362.0" prefHeight="90.0" prefWidth="360.0" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="370.0">
+            <children>
+                <VBox prefHeight="100.0" prefWidth="100.0" spacing="10.0">
+                    <children>
+                        <Label prefHeight="30.0" prefWidth="80.0" text="Upper Limit:" />
+                        <Label prefHeight="30.0" prefWidth="80.0" text="Lower Limit:" />
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                    <children>
+                        <TextField fx:id="tPulseUpperLimit" prefHeight="26.0" prefWidth="117.0" />
+                        <TextField fx:id="tPulseLowerLimit" />
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="130.0" spacing="10.0">
+                    <children>
+                        <Button fx:id="bPulseUpperLimit" alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="131.0" text="Select Upper Limit">
+                            <graphic>
+                                <PointLight color="CHARTREUSE" lightOn="true" />
+                            </graphic>
+                        </Button>
+                        <Button fx:id="bPulseLowerLimit" alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="125.0" text="Select Lower Limit" />
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+            </children>
+        </HBox>
+        <HBox layoutX="436.0" layoutY="370.0" prefHeight="90.0" prefWidth="360.0" AnchorPane.bottomAnchor="140.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="370.0">
+            <children>
+                <VBox prefHeight="100.0" prefWidth="100.0" spacing="10.0">
+                    <children>
+                        <Label prefHeight="30.0" prefWidth="80.0" text="Lower Limit:" />
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                    <children>
+                        <TextField fx:id="tSpO2LowerLimit" />
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="130.0" spacing="10.0">
+                    <children>
+                        <Button fx:id="bSpO2LowerLimit" alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="125.0" text="Select Lower Limit" />
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+            </children>
+        </HBox>
+        <Line endY="512.0" layoutX="406.0" layoutY="87.0" startY="-86.0" />
+        <ImageView fx:id="iLogo" fitHeight="100.0" fitWidth="100.0" layoutX="10.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <viewport>
+                <Rectangle2D height="3000.0" />
+            </viewport></ImageView>
+    </children>
+</AnchorPane>

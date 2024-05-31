@@ -1,0 +1,8 @@
+.glow-green {
+    -fx-background-color: charteusse;
+    -fx-effect: dropshadow( gaussian, rgba(95, 168, 22, 0.8), 10, 0, 0, 0);
+}
+
+.flash-red {
+    -fx-background-color: red;
+}
